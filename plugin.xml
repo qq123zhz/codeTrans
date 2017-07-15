@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IProject"
+            id="codeTrans.contribution1">
+         <menu
+               icon="icons/relaunch_background_disabled.png"
+               id="codeTrans.menu1"
+               label="编码转换"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="GBK转UTF8"
+               class="codetrans.popup.actions.Gbk2Utf8"
+               menubarPath="codeTrans.menu1/group1"
+               enablesFor="1"
+               id="codeTrans.newAction">
+         </action>
+         <action
+               class="codetrans.popup.actions.Utf82Gbk"
+               enablesFor="1"
+               id="codeTrans.newAction"
+               label="UTF8转GBK"
+               menubarPath="codeTrans.menu1/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="codeTrans.contribution2"
+            objectClass="org.eclipse.jdt.core.IJavaProject">
+         <menu
+               icon="icons/relaunch_background_disabled.png"
+               id="codeTrans.menu1"
+               label="编码转换"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="codetrans.popup.actions.Gbk2Utf8"
+               enablesFor="1"
+               id="codeTrans.newAction"
+               label="GBK转UTF8"
+               menubarPath="codeTrans.menu1/group1">
+         </action>
+         <action
+               class="codetrans.popup.actions.Utf82Gbk"
+               enablesFor="1"
+               id="codeTrans.newAction"
+               label="UTF8转GBK"
+               menubarPath="codeTrans.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
